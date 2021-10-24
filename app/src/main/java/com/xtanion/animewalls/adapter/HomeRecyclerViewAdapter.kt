@@ -54,8 +54,6 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):RecyclerView.Ad
         Glide.with(context)
             .load(thumbUrl)
             .placeholder(colorDrawable)
-            .diskCacheStrategy(DiskCacheStrategy.NONE)
-            .skipMemoryCache(true)
             .fitCenter()
             .into(binding.wallpaperImage)
     }

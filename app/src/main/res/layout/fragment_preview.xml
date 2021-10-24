@@ -26,9 +26,12 @@
         android:background="@drawable/bottom_bar_background"
         android:animateLayoutChanges="true">
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottom_bar_items"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="15dp">
+            android:layout_margin="15dp"
+            android:visibility="gone"
+            android:animateLayoutChanges="true">
             <ImageView
                 android:id="@+id/set_wallpaper"
                 android:layout_width="wrap_content"
@@ -83,18 +86,18 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/like_wallpaper"
                 android:layout_marginTop="12dp"/>
-            <com.airbnb.lottie.LottieAnimationView
-                android:id="@+id/loading_lottie"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                app:lottie_rawRes="@raw/lottie_loading_2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/info_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:lottie_autoPlay="true"
-                app:lottie_loop="true"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_lottie"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:lottie_rawRes="@raw/lottie_loading_2"
+            android:layout_gravity="center_vertical|center"
+            android:layout_margin="5dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            android:visibility="visible"/>
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 </androidx.constraintlayout.widget.ConstraintLayout>

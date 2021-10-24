@@ -21,6 +21,7 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
     init {
         repository = ApiRepository()
         getData()
+
     }
 
     fun addNewPage(){
@@ -32,6 +33,12 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
 
     fun refreshData(){
         getData()
+    }
+
+    fun loadNewPage(page:Int){
+        currentPage = page
+        getData()
+        Log.d("DataAdded","From Pager: NewSize = ${oldWallpaperList.size} and page = $currentPage")
     }
 
     private fun getData(){
@@ -54,4 +61,6 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
             }
         }
     }
+
+    val wallPagerData = repository.getResult()
 }
