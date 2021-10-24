@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeFragment"
+        android:title="@string/wallpapers"
+        android:icon="@drawable/dynamic_image"/>
+    <item android:id="@+id/widgetsFragment"
+        android:title="@string/favourites"
+        android:icon="@drawable/dynamic_bookmark"/>
+</menu>

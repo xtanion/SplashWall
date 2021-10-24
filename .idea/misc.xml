@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/bottom_bar_background.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/bottom_bar_icon.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/circular_image_bg.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/dynamic_bookmark.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/dynamic_heart.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/dynamic_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic__564523_photo_pic_picture_gallery_image_icon.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_arrow_back_1.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_bookmark.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_bookmark_added.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_bookmark_solid.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_heart.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_heart_filled.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_home_filled.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_1.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_solid.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_outline_bookmark_added.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_outline_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_round_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21851851851851853" />
+        <entry key="app/src/main/res/layout/fragment_preview.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/single_grid_item.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/menu/bottom_bar_buttons.xml" value="0.3072649572649573" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="status_bar_color">#EFEFEF</color>
+    <color name="card_dark">#121315</color>
+<!-- best card dark   191B1E-->
+    <color name="card_light">#E5E9F0</color>
+    <color name="secondary_text">#8D94A6</color>
+    <color name="tertiary_text">#595F6D</color>
+
+    <color name="secondary_dark">#1E2024</color>
+    <color name="secondary_light">#FFD3D3E3</color>
+    <color name="background_dark">#040304</color>
+    <color name="background_light">#eceff1</color>
+
+    <color name="green">#4ACFAC</color>
+    <color name="purple">#7E8CE0</color>
+    <color name="blue">#007CFF</color>
+    <color name="deep_blue">#006CFF</color>
+    <color name="orange">#FFA48E</color>
+</resources>
