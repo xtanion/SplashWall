@@ -1,22 +1,20 @@
-package com.xtanion.animewalls.adapter
+package com.xtanion.splashwalls.adapter
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.xtanion.animewalls.api.ApiRepository
-import com.xtanion.animewalls.api.WallpaperApi
-import com.xtanion.animewalls.data.WallData
-import com.xtanion.animewalls.viewmodel.WallpaperViewModel
+import com.xtanion.splashwalls.api.WallpaperApi
+import com.xtanion.splashwalls.data.photo.Photo
 
-class WallPagingSource(private val wallApi:WallpaperApi): PagingSource<Int,WallData>() {
+class WallPagingSource(private val wallApi:WallpaperApi): PagingSource<Int, Photo>() {
 
-    override fun getRefreshKey(state: PagingState<Int, WallData>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, Photo>): Int? {
         return state.anchorPosition?.let {
             val anchorPage = state.closestPageToPosition(it)
             anchorPage?.prevKey?.plus(1) ?: anchorPage?.nextKey?.minus(1)
         }
     }
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, WallData> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Photo> {
         val page = params.key ?: 1
 
         return try {

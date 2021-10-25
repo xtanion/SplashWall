@@ -1,10 +1,10 @@
-package com.xtanion.animewalls.data
+package com.xtanion.splashwalls.data.photo
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class CustomWallData(
+data class WallpaperData(
     val color: String,
     val height: Int,
     val id: String,

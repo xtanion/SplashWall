@@ -1,40 +1,28 @@
-package com.xtanion.animewalls.fragments
+package com.xtanion.splashwalls.fragments
 
 import android.app.WallpaperManager
-import android.content.res.Resources
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.graphics.Color
-import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.Log
-import android.util.TypedValue
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.graphics.drawable.toBitmap
-import androidx.navigation.NavArgs
 import androidx.navigation.fragment.navArgs
-import coil.Coil
-import coil.load
-import coil.transform.BlurTransformation
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.RequestOptions.bitmapTransform
 import com.bumptech.glide.request.target.Target
-import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.xtanion.animewalls.R
-import com.xtanion.animewalls.databinding.FragmentPreviewBinding
-import org.xml.sax.Attributes
+import com.xtanion.splashwalls.R
+import com.xtanion.splashwalls.databinding.FragmentPreviewBinding
 import java.io.IOException
 
 class PreviewFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.xtanion.animewalls
+package com.xtanion.splashwalls
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

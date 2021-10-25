@@ -1,4 +1,4 @@
-package com.xtanion.animewalls.api
+package com.xtanion.splashwalls.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

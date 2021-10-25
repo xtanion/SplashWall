@@ -1,4 +1,4 @@
-package com.xtanion.animewalls
+package com.xtanion.splashwalls
 
 import org.junit.Test
 

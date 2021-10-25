@@ -1,20 +1,20 @@
-package com.xtanion.animewalls.viewmodel
+package com.xtanion.splashwalls.viewmodel
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.xtanion.animewalls.api.ApiRepository
-import com.xtanion.animewalls.api.RetrofitInstance
-import com.xtanion.animewalls.data.WallData
+import androidx.paging.cachedIn
+import com.xtanion.splashwalls.api.ApiRepository
+import com.xtanion.splashwalls.data.photo.Photo
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import java.io.IOException
 
 class WallpaperViewModel(application: Application):AndroidViewModel(application) {
-    val wallpaperList = MutableLiveData<MutableList<WallData>>()
-    private val oldWallpaperList = mutableListOf<WallData>()
+    val wallpaperList = MutableLiveData<MutableList<Photo>>()
+    private val oldWallpaperList = mutableListOf<Photo>()
     private val repository :ApiRepository
     private var currentPage:Int = 1
 
@@ -22,23 +22,6 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
         repository = ApiRepository()
         getData()
 
-    }
-
-    fun addNewPage(){
-        currentPage+=1
-        //oldWallpaperList.addAll( wallpaperList.value!!)
-        getData()
-        Log.d("DataAdded","NewSize = ${oldWallpaperList.size} and page = $currentPage")
-    }
-
-    fun refreshData(){
-        getData()
-    }
-
-    fun loadNewPage(page:Int){
-        currentPage = page
-        getData()
-        Log.d("DataAdded","From Pager: NewSize = ${oldWallpaperList.size} and page = $currentPage")
     }
 
     private fun getData(){
@@ -62,5 +45,5 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
         }
     }
 
-    val wallPagerData = repository.getResult()
+    val wallPagerData = repository.getResult().cachedIn(viewModelScope)
 }
