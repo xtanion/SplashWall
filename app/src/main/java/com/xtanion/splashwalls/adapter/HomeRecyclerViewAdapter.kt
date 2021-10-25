@@ -60,13 +60,15 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapt
 
             val fullName = "${currentItem.user.first_name} ${currentItem.user.last_name?:""}"
             binding.photographerName.apply {
-                text = currentItem.id
+                text = fullName
                 setTextColor(reversedColor)
             }
         }else{
             Glide.with(context).clear(binding.wallpaperImage)
             binding.wallpaperImage.setImageDrawable(null)
+            binding.photographerName.text = "Failed to Load"
         }
+        holder.setIsRecyclable(false)
     }
 
     override fun onViewRecycled(holder: HomeRVViewHolder) {
