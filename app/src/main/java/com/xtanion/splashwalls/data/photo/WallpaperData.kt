@@ -11,6 +11,7 @@ data class WallpaperData(
     val likes: Int,
     val updated_at: String,
     val urls: Urls,
+    val links: Links,
     val userName: String,
     val userId: String,
     val width: Int

@@ -36,7 +36,7 @@
                 android:id="@+id/set_wallpaper"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_image__1_"
+                android:src="@drawable/ic_image_non_underline"
                 android:padding="5dp"
                 app:tint="?attr/colorOnPrimary"
                 app:layout_constraintTop_toTopOf="parent"

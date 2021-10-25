@@ -61,7 +61,7 @@ class HomeFragment : Fragment(), HomeRecyclerViewAdapter.HomeRVInterface {
     override fun onItemClick(data: Photo) {
         Log.d("Navigation", "Data: ${data.id}")
         val customData = WallpaperData(
-            data.color,data.height,data.id,data.likes,data.updated_at,data.urls,data.user.first_name,data.user.id,data.width)
+            data.color,data.height,data.id,data.likes,data.updated_at,data.urls,data.links,data.user.first_name,data.user.id,data.width)
         val action = HomeFragmentDirections.actionHomeFragmentToPreviewFragment(customData)
         Navigation.findNavController(requireView()).navigate(action)
         Toast.makeText(context,data.id,Toast.LENGTH_SHORT).show()

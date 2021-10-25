@@ -10,4 +10,6 @@
     <string name="photo_by_naruto_uzumaki_unsplash_com">Photo by Naruto Uzumaki | Unsplash.com</string>
     <string name="splashwalls">SplashWalls</string>
     <string name="search_images">Search Images</string>
+    <string name="collections">Collections</string>
+    <string name="settings">Settings</string>
 </resources>

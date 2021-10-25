@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.xtanion.splashwalls.fragments.HomeFragment
 import com.xtanion.splashwalls.data.photo.Photo
 import com.xtanion.splashwalls.databinding.SingleGridItemBinding
@@ -22,7 +23,6 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapt
     diffCallback) {
 
     private lateinit var binding: SingleGridItemBinding
-    private var wallpaperList = emptyList<Photo>()
     private lateinit var context:Context
 
     inner class HomeRVViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
@@ -48,14 +48,12 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapt
             val color = currentItem.color
             val colorDrawable = ColorDrawable(Color.parseColor(color))
             val reversedColor = getReversedColor(color)
-            binding.wallpaperImage.setImageDrawable(null)
-            Glide.with(context).clear(binding.wallpaperImage)
             Glide.with(context)
                 .load(currentItem.urls.regular)
                 .placeholder(colorDrawable)
                 .fitCenter()
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .error(colorDrawable)
-                .diskCacheStrategy(DiskCacheStrategy.NONE)
                 .into(binding.wallpaperImage)
 
             val fullName = "${currentItem.user.first_name} ${currentItem.user.last_name?:""}"
