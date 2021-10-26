@@ -15,7 +15,7 @@ class ApiRepository {
     fun getResult() = Pager(
         config = PagingConfig(
             pageSize = 20,
-            maxSize = 100,
+            maxSize = 80,
             enablePlaceholders = false
         ),
         pagingSourceFactory = {WallPagingSource(RetrofitInstance.api)}

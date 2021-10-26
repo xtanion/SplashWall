@@ -11,7 +11,7 @@ interface WallpaperApi {
     @Headers(
         "Authorization: Client-ID ${BuildConfig.UNSPLASH_KEY}"
     )
-    @GET("photos")
+    @GET("topics/wallpapers/photos")
     suspend fun getWalls(
         @Query("page") page:Int,
         @Query("per_page")per_page:Int=20): Response<MutableList<Photo>>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:width="200dp" android:height="200dp"/>
+    <gradient android:angle="90" android:endColor="@color/twenty_percent" android:startColor="?attr/cardBackgroundColor"/>
+</shape>

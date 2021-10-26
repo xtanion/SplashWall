@@ -39,15 +39,15 @@ class HomeFragment : Fragment(), HomeRecyclerViewAdapter.HomeRVInterface {
         wallpaperRV = binding.homeRecyclerView
         wallpaperRV.adapter = adapter
         wallpaperRV.layoutManager = GridLayoutManager(context,2,LinearLayoutManager.VERTICAL,false)
-//        wallpaperRV.layoutManager = LinearLayoutManager(context)
-//        wallpaperRV.addOnScrollListener(this@HomeFragment.scrollListener)
-        wallpaperRV.setHasFixedSize(false)
+
+        wallpaperRV.setHasFixedSize(true)
+        wallpaperRV.setItemViewCacheSize(20)
 
         mViewModel.wallPagerData.observe(viewLifecycleOwner, {
             adapter.submitData(viewLifecycleOwner.lifecycle,it)
             binding.progressBar.visibility = View.GONE
             isLoading = false
-            Log.d("DataAdded","NewData")
+            Log.d("DataAdded","Data Received")
         })
         binding.refreshLayoutHome.apply{
             setOnRefreshListener {

@@ -16,6 +16,24 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="@id/bottom_bar"
         android:layout_marginBottom="30dp"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/lottie_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/forty_percent"
+        android:visibility="gone">
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/download_lottie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:lottie_rawRes="@raw/downloading"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"/>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_bar"
@@ -37,7 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_image_non_underline"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:background="@drawable/dynamic_image_bg"
                 app:tint="?attr/colorOnPrimary"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +67,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_download"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:background="@drawable/dynamic_image_bg"
                 app:tint="?attr/colorOnPrimary"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/set_wallpaper"
@@ -59,7 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_favorite"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:background="@drawable/dynamic_image_bg"
                 app:tint="?attr/colorOnPrimary"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/download_wallpaper"
@@ -70,7 +91,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_info"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:background="@drawable/dynamic_image_bg"
                 app:tint="?attr/colorOnPrimary"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toEndOf="@id/like_wallpaper"

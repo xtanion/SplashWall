@@ -18,6 +18,9 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.xtanion.splashwalls.fragments.HomeFragment
 import com.xtanion.splashwalls.data.photo.Photo
 import com.xtanion.splashwalls.databinding.SingleGridItemBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapter<Photo,HomeRecyclerViewAdapter.HomeRVViewHolder>(
     diffCallback) {
@@ -41,30 +44,21 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapt
     }
 
     override fun onBindViewHolder(holder: HomeRVViewHolder, position: Int) {
-//        val currentItem:WallData = wallpaperList[position]
         val currentItem: Photo? = getItem(position)
         if (currentItem!=null){
 
             val color = currentItem.color
             val colorDrawable = ColorDrawable(Color.parseColor(color))
-            val reversedColor = getReversedColor(color)
             Glide.with(context)
                 .load(currentItem.urls.regular)
                 .placeholder(colorDrawable)
                 .fitCenter()
-                .transition(DrawableTransitionOptions.withCrossFade())
                 .error(colorDrawable)
                 .into(binding.wallpaperImage)
 
-            val fullName = "${currentItem.user.first_name} ${currentItem.user.last_name?:""}"
-            binding.photographerName.apply {
-                text = fullName
-                setTextColor(reversedColor)
-            }
         }else{
             Glide.with(context).clear(binding.wallpaperImage)
             binding.wallpaperImage.setImageDrawable(null)
-            binding.photographerName.text = "Failed to Load"
         }
         holder.setIsRecyclable(false)
     }

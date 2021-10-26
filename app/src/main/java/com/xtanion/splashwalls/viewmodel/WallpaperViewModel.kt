@@ -20,30 +20,30 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
 
     init {
         repository = ApiRepository()
-        getData()
 
-    }
-
-    private fun getData(){
-        viewModelScope.launch {
-            val response = try{
-                repository.getWall(currentPage)
-            }catch (e: IOException){
-                Log.d("Response",e.toString())
-                return@launch
-            }catch (e: HttpException){
-                Log.d("Response",e.toString())
-                return@launch
-            }
-
-            if (response.isSuccessful && response.body()!=null){
-//                wallpaperList.value = response.body()
-                oldWallpaperList.addAll(response.body()!!)
-                wallpaperList.value = oldWallpaperList
-                Log.d("Response Successful","From page $currentPage")
-            }
-        }
     }
 
     val wallPagerData = repository.getResult().cachedIn(viewModelScope)
+
+//    private fun getData(){
+//        viewModelScope.launch {
+//            val response = try{
+//                repository.getWall(currentPage)
+//            }catch (e: IOException){
+//                Log.d("Response",e.toString())
+//                return@launch
+//            }catch (e: HttpException){
+//                Log.d("Response",e.toString())
+//                return@launch
+//            }
+//
+//            if (response.isSuccessful && response.body()!=null){
+////                wallpaperList.value = response.body()
+//                oldWallpaperList.addAll(response.body()!!)
+//                wallpaperList.value = oldWallpaperList
+//                Log.d("Response Successful","From page $currentPage")
+//            }
+//        }
+//    }
+
 }
