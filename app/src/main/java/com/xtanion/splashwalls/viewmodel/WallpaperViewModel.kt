@@ -14,9 +14,7 @@ import java.io.IOException
 
 class WallpaperViewModel(application: Application):AndroidViewModel(application) {
     val wallpaperList = MutableLiveData<MutableList<Photo>>()
-    private val oldWallpaperList = mutableListOf<Photo>()
     private val repository :ApiRepository
-    private var currentPage:Int = 1
 
     init {
         repository = ApiRepository()
@@ -25,25 +23,5 @@ class WallpaperViewModel(application: Application):AndroidViewModel(application)
 
     val wallPagerData = repository.getResult().cachedIn(viewModelScope)
 
-//    private fun getData(){
-//        viewModelScope.launch {
-//            val response = try{
-//                repository.getWall(currentPage)
-//            }catch (e: IOException){
-//                Log.d("Response",e.toString())
-//                return@launch
-//            }catch (e: HttpException){
-//                Log.d("Response",e.toString())
-//                return@launch
-//            }
-//
-//            if (response.isSuccessful && response.body()!=null){
-////                wallpaperList.value = response.body()
-//                oldWallpaperList.addAll(response.body()!!)
-//                wallpaperList.value = oldWallpaperList
-//                Log.d("Response Successful","From page $currentPage")
-//            }
-//        }
-//    }
 
 }

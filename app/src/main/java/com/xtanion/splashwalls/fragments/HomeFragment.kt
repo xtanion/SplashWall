@@ -64,11 +64,8 @@ class HomeFragment : Fragment(), HomeRecyclerViewAdapter.HomeRVInterface {
             data.color,data.height,data.id,data.likes,data.updated_at,data.urls,data.links,data.user.first_name,data.user.id,data.width)
         val action = HomeFragmentDirections.actionHomeFragmentToPreviewFragment(customData)
         Navigation.findNavController(requireView()).navigate(action)
-        Toast.makeText(context,data.id,Toast.LENGTH_SHORT).show()
     }
 
-
-    var isScrolling = false
     var isLoading = false
 
     override fun onDestroyView() {

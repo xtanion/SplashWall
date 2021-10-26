@@ -32,7 +32,7 @@
             android:layout_marginEnd="10dp"
             android:padding="10dp"
             android:src="@drawable/ic_search_alt"
-            app:tint="?attr/colorOnSecondary"
+            app:tint="?attr/colorOnPrimary"
             android:contentDescription="@string/search_images" />
     </com.google.android.material.appbar.MaterialToolbar>
 

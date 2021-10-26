@@ -23,6 +23,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.drawToBitmap
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import com.airbnb.lottie.animation.content.Content
@@ -39,6 +40,8 @@ import com.xtanion.splashwalls.R
 import com.xtanion.splashwalls.databinding.FragmentPreviewBinding
 import com.xtanion.splashwalls.downloads.applyWallpaper
 import com.xtanion.splashwalls.downloads.downloadWall
+import com.xtanion.splashwalls.utils.DISPLAY_HEIGHT
+import com.xtanion.splashwalls.utils.DISPLAY_WIDTH
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.IOException
@@ -66,6 +69,7 @@ class PreviewFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {100
         Log.d("PreviewCreated","successful")
         var bmp: Bitmap? = null
+        var viewBmp: Bitmap? = null
 
         activity?.findViewById<BottomNavigationView>(R.id.global_appbar)?.visibility = View.GONE
         activity?.findViewById<MaterialToolbar>(R.id.topBar)?.visibility = View.GONE
@@ -89,7 +93,7 @@ class PreviewFragment : Fragment() {
                         .placeholder(colorDrawable)
                         .thumbnail(thumbnailRequest)
                         .error(R.drawable.ic_window)
-                        .override(1600,1600)
+                        .override(2500,2500)
                         .transition(DrawableTransitionOptions.withCrossFade(1000))
                         .listener(object : RequestListener<Drawable> {
                             override fun onLoadFailed(
@@ -113,7 +117,6 @@ class PreviewFragment : Fragment() {
                                 binding.loadingLottie.visibility = View.GONE
                                 binding.bottomBarItems.visibility = View.VISIBLE
                                 binding.touchImage.apply {
-                                    setZoomTransitionDuration(1)
                                     setImageBitmap(bmp)
                                 }
                                 return false
@@ -121,7 +124,6 @@ class PreviewFragment : Fragment() {
                             }
                         })
                         .fitCenter()
-                        .override(Target.SIZE_ORIGINAL)
                         .into(binding.touchImage)
                 } catch (e: IOException) {
                     binding.loadingLottie.visibility = View.GONE
@@ -148,7 +150,7 @@ class PreviewFragment : Fragment() {
                             playAnimation()
                             addAnimatorListener(object : Animator.AnimatorListener{
                                 override fun onAnimationStart(p0: Animator?) {
-                                    TODO("Not implemented")
+                                    Log.d("Lottie Animation", "Animation Started")
                                 }
 
                                 override fun onAnimationEnd(p0: Animator?) {

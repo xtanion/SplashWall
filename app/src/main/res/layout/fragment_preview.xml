@@ -54,7 +54,7 @@
                 android:id="@+id/set_wallpaper"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_image_non_underline"
+                android:src="@drawable/ic_image_alt"
                 android:padding="10dp"
                 android:background="@drawable/dynamic_image_bg"
                 app:tint="?attr/colorOnPrimary"
