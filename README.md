@@ -1,3 +1,5 @@
+# SplashWall
+An android application built using AndroidX & Kotlin. Made using Paging3(check paging3 branch) and Retrofit. 
 # Preview
 > for those who care
 
