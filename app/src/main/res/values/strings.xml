@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AnimeWalls</string>
+    <string name="app_name">SplashWalls</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
@@ -8,4 +8,8 @@
     <string name="shivam_anand">Shivam Anand</string>
     <string name="unsplash_com">unsplash.com</string>
     <string name="photo_by_naruto_uzumaki_unsplash_com">Photo by Naruto Uzumaki | Unsplash.com</string>
+    <string name="splashwalls">SplashWalls</string>
+    <string name="search_images">Search Images</string>
+    <string name="collections">Collections</string>
+    <string name="settings">Settings</string>
 </resources>

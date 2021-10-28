@@ -5,31 +5,52 @@
       <map>
         <entry key="app/src/main/res/drawable/bottom_bar_background.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/bottom_bar_icon.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/bottom_gradient.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/circular_image_bg.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/circular_image_bg_pressed.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/dynamic_bookmark.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/dynamic_heart.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/dynamic_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/dynamic_image_bg.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic__564523_photo_pic_picture_gallery_image_icon.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_arrow_back_1.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_bar.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_bookmark.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_bookmark_added.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_bookmark_solid.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_collection.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_heart.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_heart_filled.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_home_filled.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_image.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_image_1.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image__1_.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_alt.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_no_underline_1.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_non_underline.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_image_solid.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_image_underline.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.18461538461538463" />
+        <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_outline_bookmark_added.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_outline_image.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_round_image.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_round_maximize_24.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/drawable/ic_share.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/drawable/ic_window.xml" value="0.3187552565180824" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/bottom_more_info.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/bottom_sheet_preview.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/collections_itemview.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/layout/fragment_collection.xml" value="0.3072649572649573" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21851851851851853" />
         <entry key="app/src/main/res/layout/fragment_preview.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/photo_itemview.xml" value="0.5" />
         <entry key="app/src/main/res/layout/single_grid_item.xml" value="0.3072649572649573" />
         <entry key="app/src/main/res/menu/bottom_bar_buttons.xml" value="0.3072649572649573" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3187552565180824" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3187552565180824" />
       </map>
     </option>
   </component>
