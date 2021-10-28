@@ -21,6 +21,7 @@ import android.widget.Toast
 import android.widget.Toolbar
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import androidx.core.graphics.drawable.toBitmap
 import androidx.core.view.drawToBitmap
@@ -35,6 +36,7 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.snackbar.Snackbar
 import com.xtanion.splashwalls.R
 import com.xtanion.splashwalls.databinding.FragmentPreviewBinding
@@ -42,6 +44,7 @@ import com.xtanion.splashwalls.downloads.applyWallpaper
 import com.xtanion.splashwalls.downloads.downloadWall
 import com.xtanion.splashwalls.utils.DISPLAY_HEIGHT
 import com.xtanion.splashwalls.utils.DISPLAY_WIDTH
+import com.xtanion.splashwalls.utils.ModifyUrl
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.io.IOException
@@ -52,6 +55,7 @@ class PreviewFragment : Fragment() {
     private var _binding: FragmentPreviewBinding? = null
     private val binding get() = _binding!!
     private val args: PreviewFragmentArgs by navArgs()
+    private var isLoading:Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,7 +70,7 @@ class PreviewFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {100
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         Log.d("PreviewCreated","successful")
         var bmp: Bitmap? = null
         var viewBmp: Bitmap? = null
@@ -75,8 +79,7 @@ class PreviewFragment : Fragment() {
         activity?.findViewById<MaterialToolbar>(R.id.topBar)?.visibility = View.GONE
         if (args.imageData !=null){
             args.imageData.apply {
-                val fullUrl = this!!.urls.full
-                val lowUrl = this.urls.small
+                val fullUrl = this!!.urls.raw
                 val regularUrl = this.urls.regular
                 val downloadUrl = this.links.download
                 val color = this.color
@@ -93,7 +96,6 @@ class PreviewFragment : Fragment() {
                         .placeholder(colorDrawable)
                         .thumbnail(thumbnailRequest)
                         .error(R.drawable.ic_window)
-                        .override(2500,2500)
                         .transition(DrawableTransitionOptions.withCrossFade(1000))
                         .listener(object : RequestListener<Drawable> {
                             override fun onLoadFailed(
@@ -102,6 +104,7 @@ class PreviewFragment : Fragment() {
                                 target: Target<Drawable>?,
                                 isFirstResource: Boolean
                             ): Boolean {
+                                isLoading = true
                                 return false
                             }
 
@@ -115,10 +118,10 @@ class PreviewFragment : Fragment() {
                                 bmp = resource?.toBitmap()
 
                                 binding.loadingLottie.visibility = View.GONE
-                                binding.bottomBarItems.visibility = View.VISIBLE
                                 binding.touchImage.apply {
                                     setImageBitmap(bmp)
                                 }
+                                isLoading = false
                                 return false
 
                             }
@@ -127,17 +130,21 @@ class PreviewFragment : Fragment() {
                         .into(binding.touchImage)
                 } catch (e: IOException) {
                     binding.loadingLottie.visibility = View.GONE
-                    binding.bottomBarItems.visibility = View.VISIBLE
                     Toast.makeText(context, "Image too big!", Toast.LENGTH_LONG).show()
                 }
                 binding.infoText.text = "Photo by ${this.userName} | Unsplash.com"
 
                 binding.setWallpaper.setOnClickListener {
-                    viewLifecycleOwner.lifecycleScope.launch {
-                        requireActivity().runOnUiThread {
-                            Snackbar.make(view, "Applying Wallpaper", Snackbar.LENGTH_SHORT).show()
+                    if (isLoading){
+                        Snackbar.make(view,"Image not loaded...",Snackbar.LENGTH_SHORT).show()
+                    }else {
+                        viewLifecycleOwner.lifecycleScope.launch {
+                            requireActivity().runOnUiThread {
+                                Snackbar.make(view, "Applying Wallpaper", Snackbar.LENGTH_SHORT)
+                                    .show()
+                            }
+                            applyWallpaper(requireContext(), bmp, view)
                         }
-                        applyWallpaper(requireContext(),bmp,view)
                     }
                 }
 

@@ -56,5 +56,8 @@
         app:menu="@menu/bottom_bar_buttons"
         app:labelVisibilityMode="unlabeled"
         app:itemRippleColor="?attr/cardBackgroundColor"
-        app:itemIconTint="@color/bottom_bar_icon" />
+        app:itemIconTint="@color/bottom_bar_icon" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,7 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.xtanion.splashwalls.fragments.HomeFragment
 import com.xtanion.splashwalls.data.photo.Photo
 import com.xtanion.splashwalls.databinding.PhotoItemviewBinding
+import com.xtanion.splashwalls.utils.ModifyUrl
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -50,8 +51,9 @@ class HomeRecyclerViewAdapter(val homeRVInterface: HomeFragment):PagingDataAdapt
 
             val color = currentItem.color
             val colorDrawable = ColorDrawable(Color.parseColor(color))
+            val url = ModifyUrl(currentItem.urls.raw).small()
             Glide.with(context)
-                .load(currentItem.urls.small)
+                .load(url)
                 .placeholder(colorDrawable)
                 .fitCenter()
                 .error(colorDrawable)

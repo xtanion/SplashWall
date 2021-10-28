@@ -13,6 +13,11 @@
         <action
             android:id="@+id/action_homeFragment_to_previewFragment"
             app:destination="@id/previewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_collectionFragment"
+            app:destination="@id/collectionFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/previewFragment"
@@ -26,8 +31,14 @@
             android:defaultValue="@null" />
     </fragment>
     <fragment
-        android:id="@+id/collectionFragment2"
-        android:name="com.xtanion.splashwalls.CollectionFragment"
+        android:id="@+id/collectionFragment"
+        android:name="com.xtanion.splashwalls.fragments.CollectionFragment"
         android:label="fragment_collection"
-        tools:layout="@layout/fragment_collection" />
+        tools:layout="@layout/fragment_collection" >
+        <action
+            android:id="@+id/action_collectionFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@android:anim/slide_out_right"
+            app:exitAnim="@android:anim/slide_in_left" />
+    </fragment>
 </navigation>
